@@ -7,6 +7,7 @@
  */
 package xiongchu;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -40,13 +41,13 @@ public class Driver {
     public static void main(String[] args) {
         int getMid = 0;
         boolean continuous = true;
-//        while (continuous) {
+        while (continuous) {
             try {
 
                 int[] threeValues = getInput();
                 getMid = threeValues[1];
                 for (int i = 0; i < threeValues.length; i++) {
-                    if (MAX_SIDES > threeValues[i] || threeValues[i] > MIN_SIDES) {
+                    if (MAX_SIDES < threeValues[i] || threeValues[i] < MIN_SIDES) {
                         throw new IllegalArgumentException("Cannot be less than 2 or greater than 100");
                     }
                 }
@@ -55,10 +56,15 @@ public class Driver {
                 int maxValue = findMax(orderOfRolls);
                 report(threeValues[0], orderOfRolls, maxValue);
 
+            } catch (InputMismatchException e) {
+                System.err.println("Invalid input: All values must be whole numbers");
             } catch (IllegalArgumentException e) {
                 System.err.println("Bad die creation: Illegal number of sides: " + getMid);
+            } catch (DieNotRolledException e) {
+                System.err.println("Die not rolled");
             }
         }
+    }
 
 
 
