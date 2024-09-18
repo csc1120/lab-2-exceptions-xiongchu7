@@ -3,17 +3,24 @@
  * Lab 2 - Exceptions
  * Die class
  * Name: Chuakun Xiong
- * Last Updated: 9/11/2024
+ * Last Updated: 9/17/2024
  */
 package xiongchu;
 
+/**
+ * A new exception in case a die is not rolled
+ */
 public class DieNotRolledException extends RuntimeException {
-    public DieNotRolledException(String s){
-        super(s);
-        // "not in the expected range of the Die"
+
+    /**
+     * a constructor that calls the super class
+     */
+    public DieNotRolledException() {
+        super();
     }
-    /** TODO: */
+
+    @Override
     public String getMessage() {
-        return "not sure YET";
+        return "DieNotRolledException";
     }
 }
