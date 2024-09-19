@@ -3,7 +3,7 @@
  * Lab 2 - Exceptions
  * Die class
  * Name: Chuakun Xiong
- * Last Updated: 9/17/2024
+ * Last Updated: 9/18/2024
  */
 package xiongchu;
 
@@ -49,6 +49,6 @@ public class Die {
      * the individual sets for number of sides
      */
     public void roll() {
-        currentValue = random.nextInt(MIN_SIDES, numSides);
+        currentValue = random.nextInt(1, numSides + 1);
     }
 }

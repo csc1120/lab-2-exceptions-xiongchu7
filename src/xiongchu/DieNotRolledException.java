@@ -3,7 +3,7 @@
  * Lab 2 - Exceptions
  * Die class
  * Name: Chuakun Xiong
- * Last Updated: 9/17/2024
+ * Last Updated: 9/18/2024
  */
 package xiongchu;
 
